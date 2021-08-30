@@ -1,7 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import React, { useState } from "react";
 
-function App() {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      i: 0,
+    };
+  }
+
+  increment = () => {
+    this.setState({ i: this.state.i + 1 });
+  };
+
+  render() {
+    return (
+      <>
+        <h1>{this.state.i}</h1>
+        <button onClick={this.increment}>Pencet</button>
+      </>
+    );
+  }
+}
+
+function AppFunc() {
+  const [increment, setIncrement] = useState(0);
+  const [objek, setObjek] = useState({
+    a: 1,
+    b: 2,
+    c: 3,
+  });
+
+  function nambahinState() {
+    setIncrement(increment++);
+    setObjek((state) => ({ ...state, a: state.a++ }));
+  }
+
   return (
     <div className="App">
       <header className="App-header">
