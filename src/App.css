@@ -1,3 +1,15 @@
+:root {
+  --apricot: #efa079;
+  --athens-gray: #f2f3f7;
+  --mulled-wine: #4c4b64;
+  --apricot: #eb7b69;
+  --zinnwaldite: #ebc0ad;
+  --dairy-cream: #f8d4ba;
+  --bazaar: #9c8086;
+  --copper-rose: #8f6267;
+  --copperfield: #dc845c;
+}
+
 .App {
   text-align: center;
 }
