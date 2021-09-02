@@ -89,7 +89,7 @@ class App extends React.Component {
                   <input class="input" type="password"/>
                 </div>
               </div>
-              <test>Forgot Password?</test>
+              <a>Forgot Password?</a>
               <input type="submit" class="btn" value="Login"/>
             </form>
           </div>
