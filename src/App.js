@@ -2,6 +2,24 @@
 import './App.css';
 import React from 'react'
 
+// const inputs = document.querySelectorAll('input')
+
+// function focusFunc(){
+//   let parent = this.parentNode.parentNode;
+//   parent.classList.add('focus')
+// }
+
+// function blurFunc(){
+//   let parent = this.parentNode.parentNode;
+//   if(this.value===""){
+//     parent.classList.remove('focus')
+//   }
+// }
+
+// inputs.forEach(input =>{
+//   input.addEventListener('focus', focusFunc)
+//   input.addEventListener('blur', blurFunc)
+// })
 
 class App extends React.Component {
   constructor(props) {
@@ -11,15 +29,41 @@ class App extends React.Component {
     };
   }
 
-  increment = () => {
-    this.setState({ i: this.state.i + 1 });
-  };
-
   render() {
     return (
       <>
-        <h1>{this.state.i}</h1>
-        <button onClick={this.increment}>Pencet</button>
+        <img src="/svgLib/wave.svg" alt="" class="wave"/>
+        <div class="container">
+          <div class="img">
+            <img src="/svgLib/undraw_unlock_24mb.svg" alt=""/>
+          </div>
+          <div class="login-container">
+            <form action="">
+              <img class="lap" src="/svgLib/undraw_secure_login_pdn4.svg" alt=""/>
+              <h2>site name</h2>
+              <div class="input-div one">
+                <div class="i">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div>
+                  <h5>Username</h5>
+                  <input class="input" type="text"/>
+                </div>
+              </div>
+              <div class="input-div two">
+                <div class="i">
+                  <i class="fas fa-lock"></i>
+                </div>
+                <div>
+                  <h5>Password</h5>
+                  <input class="input" type="password"/>
+                </div>
+              </div>
+              <test>Forgot Password?</test>
+              <input type="submit" class="btn" value="Login"/>
+            </form>
+          </div>
+        </div>
       </>
     );
   }
