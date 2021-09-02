@@ -25,10 +25,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 0,
+      classUsername : 'input-div one',
+      classPassword : 'input-div two',
+      username: '',
+      password: ''
     };
   }
-
   render() {
     return (
       <>
@@ -41,7 +43,21 @@ class App extends React.Component {
             <form action="">
               <img class="lap" src="/svgLib/undraw_secure_login_pdn4.svg" alt=""/>
               <h2>site name</h2>
-              <div class="input-div one">
+              <div class={this.state.classUsername}
+                onFocus={() =>{
+                  this.setState({classUsername: 'input-div one focus'});
+                }}
+                onBlur={() =>{
+                  if (this.state.username) {
+                    this.setState({classUsername: 'input-div one focus'});
+                  }else if(this.state.user===''){
+                    this.setState({classUsername: 'input-div one'});
+                  }else{
+                    this.setState({classUsername: 'input-div one'});
+                  }
+                }}
+                value={this.state.username} onChange={(event) => this.setState({username: event.target.value})}
+              >
                 <div class="i">
                   <i class="fas fa-user"></i>
                 </div>
@@ -50,7 +66,21 @@ class App extends React.Component {
                   <input class="input" type="text"/>
                 </div>
               </div>
-              <div class="input-div two">
+              <div class={this.state.classPassword}
+                onFocus={() =>{
+                  this.setState({classPassword: 'input-div two focus'});
+                }}
+                onBlur={() =>{
+                  if (this.state.password) {
+                    this.setState({classPassword: 'input-div two focus'});
+                  }else if(this.state.user===''){
+                    this.setState({classPassword: 'input-div two'});
+                  }else{
+                    this.setState({classPassword: 'input-div two'});
+                  }
+                }}
+                value={this.state.password} onChange={(event) => this.setState({password: event.target.value})}
+              >
                 <div class="i">
                   <i class="fas fa-lock"></i>
                 </div>
