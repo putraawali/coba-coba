@@ -85,10 +85,18 @@ form{
 }
 
 form h2{
-  text-align: centre;
+  text-align: right;
   font-size: 3.5rem;
   text-transform: uppercase;
   margin: 15px 0;
+  color: var(--bright-gray);
+}
+
+.quote{
+  text-align: right;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin: 0;
   color: var(--bright-gray);
 }
 
@@ -134,11 +142,11 @@ form h2{
 }
 
 
-.input-div.one{
+.input-div.user{
   margin-top: 0;
 }
 
-.input-div.two{
+.input-div.password{
   margin-bottom: 4px;
 }
 
@@ -187,9 +195,11 @@ a{
   display: block;
   text-align: right;
   text-decoration: none;
+  margin: .5rem 0;
   color: var(--falcon);
   font-size: 1rem;
-  transition: .5s
+  transition: .5s;
+  cursor: pointer;
 }
 
 a:hover{
@@ -217,6 +227,10 @@ a:hover{
 .btn:hover{
   color: var(--apricot);
   background-position: right;
+}
+
+#register{
+  margin: 3rem 0;
 }
 
 @media screen and (max-width: 1050px){
@@ -254,6 +268,9 @@ a:hover{
   }
 
   .login-container{
+    justify-content: center;
+  }
+  .register-container{
     justify-content: center;
   }
 }
