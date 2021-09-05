@@ -65,6 +65,14 @@ body{
   align-items: center;
 }
 
+#move{
+  position: absolute;
+  height: 100%;
+  width: 55%;
+  right: 45%;
+  top: 0;
+}
+
 .img img{
   width: 500px;
 }
@@ -73,8 +81,30 @@ body{
   display: flex;
   align-items: center;
   text-align: center;
+  justify-content: center;
+  grid-column: 1 / 2;
+  grid-row:  1 / 2;
 }
 
+.register-container{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  grid-column: 1 / 2;
+  grid-row:  1 / 2;
+}
+
+.form-container{
+  position: absolute;
+  height: 100%;
+  width: 45%;
+  top: 0%;
+  right: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
 
 form{
   width: 600px;
@@ -265,12 +295,5 @@ a:hover{
 
   .wave{
     display: none;
-  }
-
-  .login-container{
-    justify-content: center;
-  }
-  .register-container{
-    justify-content: center;
   }
 }
