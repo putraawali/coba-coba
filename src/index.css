@@ -32,10 +32,17 @@ code {
 --copperfield: #dc845c;
 }
 
-*{
+*, *::before, *::after{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+main{
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 2rem;
 }
 
 body{
@@ -71,6 +78,7 @@ body{
   width: 55%;
   right: 45%;
   top: 0;
+  transition: 1s ease-in-out;
 }
 
 .img img{
@@ -104,11 +112,18 @@ body{
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+  transition: 1s ease-in-out;
 }
 
 form{
   width: 600px;
 }
+
+form.sign-in-form{
+  opacity: 1;
+  pointer-events: none;
+  height: 100%;
+} 
 
 .lap{
   width: 300px;
@@ -166,11 +181,9 @@ form h2{
   font-size: 15px;
 }
 
-
 .input-div.focus:after, .input-div.focus:before{
   width: 50%;
 }
-
 
 .input-div.user{
   margin-top: 0;
@@ -222,14 +235,17 @@ form h2{
 }
 
 a{
-  display: block;
-  text-align: right;
+  display: inline-block;
   text-decoration: none;
   margin: .5rem 0;
   color: var(--falcon);
   font-size: 1rem;
   transition: .5s;
   cursor: pointer;
+}
+
+.link{
+  text-align: right;
 }
 
 a:hover{
@@ -260,8 +276,34 @@ a:hover{
 }
 
 #register{
-  margin: 3rem 0;
+  margin: 5rem 0;
 }
+
+main.sign-in-mode .form-container{
+  right: 45%;
+}
+
+main.sign-in-mode #move{
+  right: 20%;
+}
+
+main.sign-in-mode form.sign-in-form{
+  opacity: 1;
+  pointer-events: all;
+}
+
+form.sign-in-form{
+  opacity: 0;
+  pointer-events: all;
+}
+
+
+main.sign-in-mode form.sign-up-form{
+  opacity: 0;
+  pointer-events: none;
+}
+
+
 
 @media screen and (max-width: 1050px){
   .container{

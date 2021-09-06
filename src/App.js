@@ -16,11 +16,19 @@ class App extends React.Component {
       regisEmail: '',
       regisUsername: '',
       regisPassword: '',
+      toggle: false
     };
   }
+
+  toggleClass = () => {
+    this.setState({ toggle: !this.state.toggle });
+  }
+
   render() {
     return (
-      <>
+      <main 
+      className={this.state.toggle ? 'sign-in-mode': null}  
+      >
         <img src="/svgLib/wave.svg" alt="" class="wave"/>
         <div class="container">
           {/* image to move */}
@@ -30,12 +38,15 @@ class App extends React.Component {
           {/* form container */}
           <div class="form-container">
             <div class="login-container">
-              <form action="sign-in">
+              <form class="sign-in-form" action="sign-in">
                 <img class="lap" src="/svgLib/undraw_secure_login_pdn4.svg" alt=""/>
                 <h2>site name</h2>
                 <h5 class="quote">Not registered yet?</h5>
-                <a class="toggle">Sign Up</a>
-                
+                <div class="link">
+                 <a class="toggle"
+                   onClick={this.toggleClass}
+                 >Sign Up</a>
+                </div>
                 <div class={this.state.classUsernameLogin}
                   onFocus={() =>{
                     this.setState({classUsernameLogin: 'input-div user focus'});
@@ -82,17 +93,24 @@ class App extends React.Component {
                     <input class="input" type="password"/>
                   </div>
                 </div>
-                <a>Forgot Password?</a>
+                <div class="link">
+                  <a>Forgot Password?</a>
+                </div>
+
                 <input type="submit" class="btn" value="Login"/>
               </form>
             </div>
             {/* ----------- */}
             <div class="register-container">
-              <form action="sign-up">
+              <form class="sign-up-form" action="sign-up">
                 <img class="lap" src="/svgLib/undraw_security_o890.svg" alt=""/>
                 <h2>Get Started</h2>
                 <h5 class="quote">Already have an account?</h5>
-                <a class="toggle">Sign In</a>
+                <div class="link">
+                  <a class="toggle"
+                    onClick={this.toggleClass}
+                  >Sign In</a>
+                </div>
                 
                 <div class={this.state.classUsernameRegis}
                   onFocus={() =>{
@@ -172,7 +190,7 @@ class App extends React.Component {
             </div>
           </div>
         </div>
-      </>
+      </main>
     );
   }
 }
