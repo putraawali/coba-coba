@@ -27,7 +27,7 @@ class App extends React.Component {
   render() {
     return (
       <main 
-      className={this.state.toggle ? 'sign-in-mode': null}  
+      className={this.state.toggle ? 'sign-up-mode': null}  
       >
         <img src="/svgLib/wave.svg" alt="" class="wave"/>
         <div class="container">
@@ -37,70 +37,6 @@ class App extends React.Component {
           </div>
           {/* form container */}
           <div class="form-container">
-            <div class="login-container">
-              <form class="sign-in-form" action="sign-in">
-                <img class="lap" src="/svgLib/undraw_secure_login_pdn4.svg" alt=""/>
-                <h2>site name</h2>
-                <h5 class="quote">Not registered yet?</h5>
-                <div class="link">
-                 <a class="toggle"
-                   onClick={this.toggleClass}
-                 >Sign Up</a>
-                </div>
-                <div class={this.state.classUsernameLogin}
-                  onFocus={() =>{
-                    this.setState({classUsernameLogin: 'input-div user focus'});
-                  }}
-                  onBlur={() =>{
-                    if (this.state.loginUsername) {
-                      this.setState({classUsernameLogin: 'input-div user focus'});
-                    }else if(this.state.loginUsername===''){
-                      this.setState({classUsernameLogin: 'input-div user'});
-                    }else{
-                      this.setState({classUsernameLogin: 'input-div user'});
-                    }
-                  }}
-                  value={this.state.loginUsername} onChange={(event) => this.setState({loginUsername: event.target.value})}
-                >
-                  <div class="i">
-                    <i class="fas fa-user"></i>
-                  </div>
-                  <div>
-                    <h5>Username</h5>
-                    <input class="input" type="text"/>
-                  </div>
-                </div>
-                <div class={this.state.classPasswordLogin}
-                  onFocus={() =>{
-                    this.setState({classPasswordLogin: 'input-div password focus'});
-                  }}
-                  onBlur={() =>{
-                    if (this.state.loginPassword) {
-                      this.setState({classPasswordLogin: 'input-div password focus'});
-                    }else if(this.state.loginPassword===''){
-                      this.setState({classPasswordLogin: 'input-div password'});
-                    }else{
-                      this.setState({classPasswordLogin: 'input-div password'});
-                    }
-                  }}
-                  value={this.state.loginPassword} onChange={(event) => this.setState({loginPassword: event.target.value})}
-                >
-                  <div class="i">
-                    <i class="fas fa-lock"></i>
-                  </div>
-                  <div>
-                    <h5>Password</h5>
-                    <input class="input" type="password"/>
-                  </div>
-                </div>
-                <div class="link">
-                  <a>Forgot Password?</a>
-                </div>
-
-                <input type="submit" class="btn" value="Login"/>
-              </form>
-            </div>
-            {/* ----------- */}
             <div class="register-container">
               <form class="sign-up-form" action="sign-up">
                 <img class="lap" src="/svgLib/undraw_security_o890.svg" alt=""/>
@@ -186,6 +122,72 @@ class App extends React.Component {
                 </div>
                 
                 <input type="submit" class="btn" id="register" value="Register"/>
+              </form>
+            </div>
+
+            {/* ----------- */}
+
+            <div class="login-container">
+              <form class="sign-in-form" action="sign-in">
+                <img class="lap" src="/svgLib/undraw_secure_login_pdn4.svg" alt=""/>
+                <h2>site name</h2>
+                <h5 class="quote">Not registered yet?</h5>
+                <div class="link">
+                 <a class="toggle"
+                   onClick={this.toggleClass}
+                 >Sign Up</a>
+                </div>
+                <div class={this.state.classUsernameLogin}
+                  onFocus={() =>{
+                    this.setState({classUsernameLogin: 'input-div user focus'});
+                  }}
+                  onBlur={() =>{
+                    if (this.state.loginUsername) {
+                      this.setState({classUsernameLogin: 'input-div user focus'});
+                    }else if(this.state.loginUsername===''){
+                      this.setState({classUsernameLogin: 'input-div user'});
+                    }else{
+                      this.setState({classUsernameLogin: 'input-div user'});
+                    }
+                  }}
+                  value={this.state.loginUsername} onChange={(event) => this.setState({loginUsername: event.target.value})}
+                >
+                  <div class="i">
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <div>
+                    <h5>Username</h5>
+                    <input class="input" type="text"/>
+                  </div>
+                </div>
+                <div class={this.state.classPasswordLogin}
+                  onFocus={() =>{
+                    this.setState({classPasswordLogin: 'input-div password focus'});
+                  }}
+                  onBlur={() =>{
+                    if (this.state.loginPassword) {
+                      this.setState({classPasswordLogin: 'input-div password focus'});
+                    }else if(this.state.loginPassword===''){
+                      this.setState({classPasswordLogin: 'input-div password'});
+                    }else{
+                      this.setState({classPasswordLogin: 'input-div password'});
+                    }
+                  }}
+                  value={this.state.loginPassword} onChange={(event) => this.setState({loginPassword: event.target.value})}
+                >
+                  <div class="i">
+                    <i class="fas fa-lock"></i>
+                  </div>
+                  <div>
+                    <h5>Password</h5>
+                    <input class="input" type="password"/>
+                  </div>
+                </div>
+                <div class="link">
+                  <a>Forgot Password?</a>
+                </div>
+
+                <input type="submit" class="btn" value="Login"/>
               </form>
             </div>
           </div>
