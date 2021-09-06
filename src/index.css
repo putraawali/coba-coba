@@ -89,7 +89,7 @@ body{
   display: flex;
   align-items: center;
   text-align: center;
-  justify-content: center;
+  justify-content: space-evenly;
   grid-column: 1 / 2;
   grid-row:  1 / 2;
 }
@@ -98,9 +98,7 @@ body{
   display: flex;
   align-items: center;
   text-align: center;
-  justify-content: center;
-  grid-column: 1 / 2;
-  grid-row:  1 / 2;
+  justify-content: space-evenly;
 }
 
 .form-container{
@@ -117,13 +115,10 @@ body{
 
 form{
   width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
-
-form.sign-in-form{
-  opacity: 1;
-  pointer-events: none;
-  height: 100%;
-} 
 
 .lap{
   width: 300px;
@@ -292,9 +287,9 @@ main.sign-in-mode form.sign-in-form{
   pointer-events: all;
 }
 
-form.sign-in-form{
+.sign-in-form{
   opacity: 0;
-  pointer-events: all;
+  pointer-events: none;
 }
 
 
